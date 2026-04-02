@@ -86,3 +86,9 @@ logs/
 *.tmp
 *.bak
 *.orig
+
+# ── Demo scripts output (keep gif, ignore raw video) ──────────────
+*.mp4
+*.mov
+*.mkv
+demo_recording.*
