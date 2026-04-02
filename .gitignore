@@ -1,94 +1,29 @@
-# ── Python ────────────────────────────────────────────────────────
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
 *.pyo
-*.pyd
 .Python
-pip-log.txt
-pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
 
-# ── Virtual environments ───────────────────────────────────────────
+# Virtual environments
 .venv/
 venv/
 env/
-ENV/
-.env
-*.env
 
-# ── Distribution / packaging ───────────────────────────────────────
-build/
-dist/
-*.egg-info/
-*.egg
-.eggs/
-wheels/
-
-# ── Testing & coverage ────────────────────────────────────────────
-.pytest_cache/
-.coverage
-htmlcov/
-*.cover
-coverage.xml
-nosetests.xml
-
-# ── Type checkers ─────────────────────────────────────────────────
-.mypy_cache/
-.dmypy.json
-.pyright/
-.ruff_cache/
-
-# ── IDEs & editors ────────────────────────────────────────────────
+# IDE
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
 
-# ── Jupyter Notebooks ─────────────────────────────────────────────
-.ipynb_checkpoints/
-*.ipynb
+# Project runtime files
+inventory.db
+uploaded_images/
 
-# ── Project-specific: 資料庫與上傳快取 ────────────────────────────
-inventory.db            # SQLite 本地資料庫（每台機器自行建立）
-inventory.db-shm
-inventory.db-wal
-uploaded_images/        # 上傳圖片快取
-
-# ── YOLO & EasyOCR 模型快取 ───────────────────────────────────────
-*.pt                    # YOLO 模型權重（auto-downloaded）
+# ML model weights (large files — download automatically at first run)
+*.pt
 *.onnx
-*.engine
-runs/                   # Ultralytics 推理輸出
-.EasyOCR/               # EasyOCR 模型快取（~/.EasyOCR）
 
-# ── Streamlit ─────────────────────────────────────────────────────
-.streamlit/secrets.toml # 含敏感金鑰時不提交
-
-# ── macOS ─────────────────────────────────────────────────────────
+# macOS
 .DS_Store
-.AppleDouble
-.LSOverride
-._*
-
-# ── Windows ───────────────────────────────────────────────────────
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# ── Logs ──────────────────────────────────────────────────────────
-*.log
-logs/
-
-# ── Temp files ────────────────────────────────────────────────────
-*.tmp
-*.bak
-*.orig
-
-# ── Demo scripts output (keep gif, ignore raw video) ──────────────
-*.mp4
-*.mov
-*.mkv
-demo_recording.*

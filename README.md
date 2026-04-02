@@ -9,9 +9,9 @@
 [![YOLOv11](https://img.shields.io/badge/YOLO-v11-00BFFF?logo=ultralytics)](https://ultralytics.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-![Screenshot](screenshot.png)
+![Screenshot](assets/screenshot.png)
 
-![Demo Animation](demo_animation.gif)
+![Demo Animation](assets/demo_animation.gif)
 
 ---
 
@@ -107,8 +107,8 @@
 ```bash
 git clone https://github.com/<your-username>/smart-inventory.git
 cd smart-inventory
-python app.py          # 首次執行自動 pip install
-streamlit run app.py
+pip install -r requirements.txt
+streamlit run src/app.py
 ```
 
 > 首次啟動會自動下載：
@@ -118,16 +118,8 @@ streamlit run app.py
 ### 方法二：手動安裝
 
 ```bash
-pip install streamlit>=1.32.0 \
-            ultralytics>=8.3.0 \
-            easyocr>=1.7.1 \
-            opencv-python-headless>=4.9.0 \
-            Pillow>=10.0.0 \
-            rapidfuzz>=3.6.0 \
-            numpy>=1.24.0 \
-            pandas>=2.0.0
-
-streamlit run app.py
+pip install -r requirements.txt
+streamlit run src/app.py
 ```
 
 ### 使用方式
@@ -144,8 +136,8 @@ streamlit run app.py
 測試腳本 **不需要 GPU 或模型下載**，透過 mock 隔離重量依賴：
 
 ```bash
-python test_logic.py          # 標準輸出
-python test_logic.py -v       # verbose（每個子案例）
+python src/test_logic.py          # 標準輸出
+python src/test_logic.py -v       # verbose（每個子案例）
 ```
 
 ### 測試覆蓋範圍（122 案例）
@@ -276,13 +268,20 @@ _ul.YOLO = MagicMock()
 
 ```
 smart-inventory/
-├── app.py               # 主程式（Streamlit 全端）
-├── test_logic.py        # 測試套件（122 案例，無需 GPU）
-├── inventory.db         # SQLite 資料庫（執行後自動建立）
-├── uploaded_images/     # 上傳圖片快取（執行後自動建立）
+├── src/
+│   ├── app.py               # 主程式（Streamlit 全端）
+│   ├── test_logic.py        # 測試套件（122 案例，無需 GPU）
+│   └── setup_demo.py        # Demo 資料初始化腳本
+├── assets/
+│   ├── screenshot.png       # UI 截圖
+│   └── demo_animation.gif   # Demo 動畫
+├── requirements.txt         # Python 依賴清單
 ├── README.md
 └── .gitignore
 ```
+
+> **執行時自動建立（不納入版本控制）：**
+> `inventory.db`、`uploaded_images/`、`yolo11n.pt`
 
 ---
 
