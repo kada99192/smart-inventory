@@ -9,6 +9,8 @@
 [![YOLOv11](https://img.shields.io/badge/YOLO-v11-00BFFF?logo=ultralytics)](https://ultralytics.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
+![Screenshot](screenshot.png)
+
 ![Demo Animation](demo_animation.gif)
 
 ---
