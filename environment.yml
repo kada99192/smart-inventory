@@ -1,0 +1,16 @@
+name: smart-inventory
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - streamlit>=1.32.0
+      - ultralytics>=8.3.0
+      - easyocr>=1.7.1
+      - opencv-python-headless>=4.9.0
+      - Pillow>=10.0.0
+      - rapidfuzz>=3.6.0
+      - numpy>=1.24.0
+      - pandas>=2.0.0
