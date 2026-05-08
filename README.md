@@ -99,28 +99,46 @@
 
 ### 系統需求
 
-- Python **3.10+**
+- [Miniconda](https://docs.conda.io/projects/miniconda/) 或 [Anaconda](https://www.anaconda.com/)（必備）
+- Python **3.10+**（由 conda 自動安裝）
 - （選用）CUDA GPU — EasyOCR / YOLO 支援 GPU 加速，CPU 亦可運行
 
-### 方法一：直接執行（自動安裝依賴）
+### 方法一：一鍵啟動腳本（推薦）
+
+腳本會自動建立 conda 環境 `smart-inventory`、安裝依賴、啟動 Streamlit。
 
 ```bash
-git clone https://github.com/<your-username>/smart-inventory.git
+git clone https://github.com/kada99192/smart-inventory.git
 cd smart-inventory
-pip install -r requirements.txt
-streamlit run src/app.py
+```
+
+**Windows：**
+
+```cmd
+run.bat
+```
+
+**macOS / Linux：**
+
+```bash
+chmod +x run.sh
+./run.sh
 ```
 
 > 首次啟動會自動下載：
 > - `yolo11n.pt` ≈ 6 MB（Ultralytics CDN）
 > - EasyOCR 模型 ≈ 50 MB（中文 + 英文）
 
-### 方法二：手動安裝
+### 方法二：手動建立 conda 環境
 
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml
+conda activate smart-inventory
 streamlit run src/app.py
 ```
+
+> 環境名稱定義於 `environment.yml`：`smart-inventory`
+> 之後重複啟動只要：`conda activate smart-inventory && streamlit run src/app.py`
 
 ### 使用方式
 
@@ -275,7 +293,9 @@ smart-inventory/
 ├── assets/
 │   ├── screenshot.png       # UI 截圖
 │   └── demo_animation.gif   # Demo 動畫
-├── requirements.txt         # Python 依賴清單
+├── environment.yml          # Conda 環境定義（env name: smart-inventory）
+├── run.bat                  # Windows 一鍵啟動（自動 conda activate + streamlit run）
+├── run.sh                   # macOS / Linux 一鍵啟動
 ├── README.md
 └── .gitignore
 ```
