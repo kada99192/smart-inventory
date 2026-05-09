@@ -17,6 +17,9 @@ env/
 .idea/
 *.swp
 
+# Claude Code agent state
+.claude/
+
 # Project runtime files
 inventory.db
 uploaded_images/

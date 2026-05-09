@@ -1,0 +1,4 @@
+# Pin line endings for files that the OS strictly requires
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.sh  text eol=lf
